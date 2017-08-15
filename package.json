@@ -1,9 +1,8 @@
 {
   "name": "vue-blockui",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "BlockUI for vue 2, similiar to jquery blockUI, can be used for loading screen.",
   "author": "jeff <realdah@gmail.com>",
-  "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",
