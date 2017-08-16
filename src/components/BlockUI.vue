@@ -8,10 +8,9 @@
 </template>
 
 <script>
-
 export default {
   name: 'BlockUI',
-  props : ['message', 'src']
+  props: ['message', 'src'],
 }
 </script>
 

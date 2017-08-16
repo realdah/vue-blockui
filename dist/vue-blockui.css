@@ -1,4 +1,22 @@
 
-.test h1[data-v-e6701f66] {
-  color: #40b883;
+.loading-container .loading-backdrop[data-v-3605d0f6] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: lightgray;
+  opacity: 0.5;
+  z-index: 9998;
+}
+.loading-container .loading[data-v-3605d0f6] {
+  z-index: 9999;
+  position: fixed;
+  text-align: center;
+  left: calc((100% - 202px)/2);
+  top: calc((100% - 200px)/2);
+  background-color: white;
+  padding: 20px 50px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

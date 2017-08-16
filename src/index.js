@@ -1,14 +1,14 @@
-import Test from './components/Test.vue'
+import BlockUI from './components/BlockUI.vue'
 
 // Install the components
 export function install (Vue) {
-  Vue.component('test', Test)
+  Vue.component('BlockUI', BlockUI)
   /* -- Add more components here -- */
 }
 
 // Expose the components
 export {
-  Test,
+  BlockUI,
   /* -- Add more components here -- */
 }
 
