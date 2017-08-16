@@ -2,7 +2,8 @@
     <div class="loading-container">
         <div class="loading-backdrop"></div>
         <div class="loading">
-            <img :src="url"><div>{{message}}</div>
+            <img :src="url" v-if="url"/>
+            <div>{{message}}</div>
         </div>
     </div>
 </template>

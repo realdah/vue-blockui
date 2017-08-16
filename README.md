@@ -124,6 +124,13 @@ I would recommend you to create your VUE project using vue-cli, then it should i
 
 # Usage
 
+| Prop Name  | Description |
+| ------------- | ------------- |
+| message  | Message to be shown in loading screen  |
+| url  | <b>Optional Field</b>, image including svg/gif/png/jpg etc, you can use any animated/static image supported by img tag. |
+
+Then, you can combine with <b>v-if</b>/<b>v-show</b> to show or hide the BlockUI.
+
 ## In your template
 ```
 <BlockUI message="Loading..." :url="url"></BlockUI>

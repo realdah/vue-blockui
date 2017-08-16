@@ -1,7 +1,7 @@
 {
   "name": "vue-blockui",
   "description": "BlockUI for vue 2, similiar to jquery blockUI, can be used for loading screen.",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": {
     "name": "jeff",
     "email": "realdah@gmail.com"
@@ -24,12 +24,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/realdah@gmail.com/vue-blockui.git"
+    "url": "https://github.com/realdah/vue-blockui"
   },
   "bugs": {
-    "url": "https://github.com/realdah@gmail.com/vue-blockui/issues"
+    "url": "https://github.com/realdah/vue-blockui/issues"
   },
-  "homepage": "https://github.com/realdah@gmail.com/vue-blockui#readme",
+  "homepage": "https://github.com/realdah/vue-blockui",
   "devDependencies": {
     "babel-core": "^6.0.0",
     "babel-eslint": "^7.1.1",
