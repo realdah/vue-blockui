@@ -20,7 +20,6 @@
 .loading-container .loading[data-v-3605d0f6] {
     z-index: 9999;
     position: fixed;
-    text-align: center;
     display: inline-block;
     background-color: white;
     padding: 20px 50px;
