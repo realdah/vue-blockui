@@ -17,6 +17,14 @@ export default {
 
 <style lang="scss" scoped>
 .loading-container {
+
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    text-align: center;
+
   .loading-backdrop {
     position: fixed;
     top: 0;
@@ -29,15 +37,19 @@ export default {
   }
 
   .loading {
-    z-index: 9999;
-    position: fixed;
-    text-align: center;
-    left: calc((100% - 202px)/2);
-    top: calc((100% - 200px)/2);
-    background-color: white;
-    padding: 20px 50px;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      z-index: 9999;
+      position: fixed;
+      display: inline-block;
+      background-color: white;
+      padding: 20px 50px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      left: 50%;
+      top: 50%;
+      -ms-transform: translate(-50%,-50%);
+      -moz-transform: translate(-50%,-50%);
+      -webkit-transform: translate(-50%,-50%); 
+      transform: translate(-50%,-50%);
   }
 }
 </style>
