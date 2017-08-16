@@ -2,7 +2,7 @@
     <div class="loading-container">
         <div class="loading-backdrop"></div>
         <div class="loading">
-            <img :src="src"><div>{{message}}</div>
+            <img :url="src"><div>{{message}}</div>
         </div>
     </div>
 </template>
@@ -10,7 +10,7 @@
 <script>
 export default {
   name: 'BlockUI',
-  props: ['message', 'src'],
+  props: ['message', 'url'],
 }
 </script>
 
