@@ -9,6 +9,7 @@ BlockUI for vue 2, similiar to jquery blockUI, can be used for loading screen.
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Examples](#examples)
 
 # Installation
 
@@ -163,7 +164,10 @@ You can override BlockUI sytlings based on your needs.
 Check the class defined for BlockUI using develop tool in your favorite browser.
 
 
+# Examples
+Check below screenshots (More to come):
 
+![alt text](https://raw.githubusercontent.com/realdah/vue-blockui/master/samples/sample1.jpg)
 
 # Plugin Development
 
