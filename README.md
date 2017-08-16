@@ -9,7 +9,6 @@ BlockUI for vue 2, similiar to jquery blockUI, can be used for loading screen.
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Example](#example)
 
 # Installation
 
@@ -17,7 +16,7 @@ BlockUI for vue 2, similiar to jquery blockUI, can be used for loading screen.
 npm install --save vue-blockui
 ```
 
-## Default import
+## Default import (Recommended)
 
 Install all the components:
 
@@ -37,13 +36,12 @@ import { Test } from 'vue-blockui'
 Vue.component('test', Test)
 ```
 
-**⚠️ A css file is included when importing the package. You may have to setup your bundler to embed the css in your page.**
-
 ## Distribution import
 
 Install all the components:
 
 ```javascript
+import Vue from 'vue'
 import 'vue-blockui/dist/vue-blockui.css'
 import BlockUI from 'vue-blockui/dist/vue-blockui.common'
 
@@ -53,6 +51,7 @@ Vue.use(BlockUI)
 Use specific components:
 
 ```javascript
+import Vue from 'vue'
 import 'vue-blockui/dist/vue-blockui.css'
 import { Test } from 'vue-blockui/dist/vue-blockui.common'
 
@@ -60,6 +59,21 @@ Vue.component('test', Test)
 ```
 
 **⚠️ You may have to setup your bundler to embed the css file in your page.**
+
+If you are using distribution import, You might have to include below configurations in your webpack config if you see errors related to css loading.
+
+```
+    {
+        test: /\.css$/,
+        use: [ 'style-loader', 'css-loader' ]
+    }
+```
+
+* Be aware that you might to install style-loader and css-loader through npm install if they are not there in your package.json.
+
+```
+npm install style-loader css-loader --save-dev    
+```
 
 ## Browser
 
@@ -106,15 +120,43 @@ Vue.component('test', Test)
 
 **⚠️ You need to configure your bundler to compile `.vue` files.** More info [in the official documentation](https://vuejs.org/v2/guide/single-file-components.html).
 
+I would recommend you to create your VUE project using vue-cli, then it should included vue-loader in webpack.
+
 # Usage
 
-> TODO
+## In your template
+```
+<BlockUI message="Loading..." :url="url"></BlockUI>
+```
 
-# Example
+## In your Code
+Please be aware, if you are using webpack and with file-loader to add finger print to your asserts,
+You can not add relative image resouce path directly in BlockUI component.
+Please use import to get the image, then pass it to the directive.
+```
+import Vue from 'vue'
+import BlockUI from 'vue-blockui'
+import loadingImage from './assets/logo.png'
 
-> TODO
+Vue.use(BlockUI)
 
----
+export default {
+  name: 'app',
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App',
+      url : loadingImage   //It is important to import the loading image then use here
+    }
+  }
+}
+```
+
+## Styling Customizatoin
+You can override BlockUI sytlings based on your needs.
+Check the class defined for BlockUI using develop tool in your favorite browser.
+
+
+
 
 # Plugin Development
 

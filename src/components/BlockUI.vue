@@ -2,7 +2,7 @@
     <div class="loading-container">
         <div class="loading-backdrop"></div>
         <div class="loading">
-            <img :url="src"><div>{{message}}</div>
+            <img :src="url"><div>{{message}}</div>
         </div>
     </div>
 </template>
