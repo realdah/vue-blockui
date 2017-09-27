@@ -17,7 +17,7 @@ BlockUI for vue 2, similiar to jquery blockUI, can be used for loading screen.
 npm install --save vue-blockui
 ```
 
-## Default import (Recommended)
+## Use Component
 
 Install all the components:
 
@@ -28,41 +28,12 @@ import BlockUI from 'vue-blockui'
 Vue.use(BlockUI)
 ```
 
-Use specific components:
 
-```javascript
-import Vue from 'vue'
-import { Test } from 'vue-blockui'
+**
+⚠️ If You see some errors during webpack compilation, you might be missing the right configuration for loading css in your <b>webpack.config.js</b>.
+**
 
-Vue.component('test', Test)
-```
-
-## Distribution import
-
-Install all the components:
-
-```javascript
-import Vue from 'vue'
-import 'vue-blockui/dist/vue-blockui.css'
-import BlockUI from 'vue-blockui/dist/vue-blockui.common'
-
-Vue.use(BlockUI)
-```
-
-Use specific components:
-
-```javascript
-import Vue from 'vue'
-import 'vue-blockui/dist/vue-blockui.css'
-import { Test } from 'vue-blockui/dist/vue-blockui.common'
-
-Vue.component('test', Test)
-```
-
-**⚠️ You may have to setup your bundler to embed the css file in your page.**
-
-If you are using distribution import, You might have to include below configurations in your webpack config if you see errors related to css loading.
-
+Under "rules", you should have below configuration: 
 ```
     {
         test: /\.css$/,
@@ -70,65 +41,23 @@ If you are using distribution import, You might have to include below configurat
     }
 ```
 
-* Be aware that you might to install style-loader and css-loader through npm install if they are not there in your package.json.
+* Be aware that you should have configured style-loader and css-loader in your package.json to support above rule.
 
 ```
 npm install style-loader css-loader --save-dev    
 ```
 
-## Browser
 
-```html
-<link rel="stylesheet" href="vue-blockui/dist/vue-blockui.css"/>
+**⚠️ You might need to configure your bundler to support `.vue` files.** More info [in the official documentation](https://vuejs.org/v2/guide/single-file-components.html).
 
-<script src="vue.js"></script>
-<script src="vue-blockui/dist/vue-blockui.browser.js"></script>
-```
-
-The plugin should be auto-installed. If not, you can install it manually with the instructions below.
-
-Install all the components:
-
-```javascript
-Vue.use(BlockUI)
-```
-
-Use specific components:
-
-```javascript
-Vue.component('test', BlockUI.Test)
-```
-
-## Source import
-
-Install all the components:
-
-```javascript
-import Vue from 'vue'
-import BlockUI from 'vue-blockui/src'
-
-Vue.use(BlockUI)
-```
-
-Use specific components:
-
-```javascript
-import Vue from 'vue'
-import { Test } from 'vue-blockui/src'
-
-Vue.component('test', Test)
-```
-
-**⚠️ You need to configure your bundler to compile `.vue` files.** More info [in the official documentation](https://vuejs.org/v2/guide/single-file-components.html).
-
-I would recommend you to create your VUE project using vue-cli, then it should included vue-loader in webpack.
+I would recommend you to create your VUE project using vue-cli, then it should included vue-loader in webpack by default.
 
 # Usage
 
 | Prop Name  | Description |
 | ------------- | ------------- |
 | message  | Message to be shown in loading screen  |
-| url  | <b>Optional Field</b>, image including svg/gif/png/jpg etc, you can use any animated/static image supported by img tag. |
+| url  | <b>Optional Field</b>, image including svg/gif/png/jpg etc, you can use any animated/static image supported by img tag.  Please be aware that you'd better import the image resource then use it instead of directly using relative image path. Example can be found in this document|
 
 Then, you can combine with <b>v-if</b>/<b>v-show</b> to show or hide the BlockUI.
 
@@ -168,6 +97,9 @@ Check the class defined for BlockUI using develop tool in your favorite browser.
 Check below screenshots (More to come):
 
 ![alt text](https://raw.githubusercontent.com/realdah/vue-blockui/master/samples/sample1.jpg)
+
+
+
 
 # Plugin Development
 
