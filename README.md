@@ -62,8 +62,13 @@ I would recommend you to create your VUE project using vue-cli, then it should i
 Then, you can combine with <b>v-if</b>/<b>v-show</b> to show or hide the BlockUI.
 
 ## In your template
+Please note the differences of using ":" or not.
 ```
-<BlockUI message="Loading..." :url="url"></BlockUI>
+<BlockUI message="Loading..."></BlockUI>
+
+or
+
+<BlockUI :message="msg" :url="url"></BlockUI>
 ```
 
 ## In your Code
