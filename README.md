@@ -132,6 +132,26 @@ Below screen is using font awesome css animation
 Below screen is using spinkit css animation
 ![Sample used css animation](https://raw.githubusercontent.com/realdah/vue-blockui/master/samples/sample3.png)
 
+Sample config for using spinkit css animation:
+```
+export default {
+  name: 'HelloWorld',
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App',
+      html: `<div class="sk-wave">
+        <div class="sk-rect sk-rect1"></div>
+        <div class="sk-rect sk-rect2"></div>
+        <div class="sk-rect sk-rect3"></div>
+        <div class="sk-rect sk-rect4"></div>
+        <div class="sk-rect sk-rect5"></div>
+      </div>`
+    }
+  }
+}
+```
+
+
 # Plugin Development
 
 ## Installation
