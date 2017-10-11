@@ -126,9 +126,11 @@ Check below screenshots (More to come):
 Below screen is using animated gif/svg
 ![Sample used animated gif/svg](https://raw.githubusercontent.com/realdah/vue-blockui/master/samples/sample1.jpg)
 
-Below screen is using css animation
+Below screen is using font awesome css animation
 ![Sample used css animation](https://raw.githubusercontent.com/realdah/vue-blockui/master/samples/sample2.png)
 
+Below screen is using spinkit css animation
+![Sample used css animation](https://raw.githubusercontent.com/realdah/vue-blockui/master/samples/sample3.png)
 
 # Plugin Development
 
