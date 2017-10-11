@@ -2,8 +2,11 @@
     <div class="loading-container">
         <div class="loading-backdrop"></div>
         <div class="loading">
-            <img :src="url" v-if="url"/>
-            <div>{{message}}</div>
+            <div class="loading-icon">
+                <img :src="url" v-if="url"/>
+                <div v-if="!url && html" v-html="html"></div>
+            </div>
+            <div class="loading-label">{{message}}</div>
         </div>
     </div>
 </template>
@@ -11,7 +14,7 @@
 <script>
 export default {
   name: 'BlockUI',
-  props: ['message', 'url'],
+  props: ['message', 'url', 'html'],
 }
 </script>
 
@@ -50,6 +53,10 @@ export default {
       -moz-transform: translate(-50%,-50%);
       -webkit-transform: translate(-50%,-50%); 
       transform: translate(-50%,-50%);
+
+      .loading-icon {
+            margin-bottom: 8px;
+      }
   }
 }
 </style>

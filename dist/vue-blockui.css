@@ -32,3 +32,6 @@
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
+.loading-container .loading .loading-icon[data-v-3605d0f6] {
+      margin-bottom: 8px;
+}

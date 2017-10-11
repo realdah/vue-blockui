@@ -57,7 +57,8 @@ I would recommend you to create your VUE project using vue-cli, then it should i
 | Prop Name  | Description |
 | ------------- | ------------- |
 | message  | Message to be shown in loading screen  |
-| url  | <b>Optional Field</b>, image including svg/gif/png/jpg etc, you can use any animated/static image supported by img tag.  Please be aware that you'd better import the image resource then use it instead of directly using relative image path. Example can be found in this document|
+| url  | <b>Optional Field</b>, image including svg/gif/png/jpg etc, you can use any animated/static image supported by img tag.  Please be aware that you'd better import the image resource then use it instead of directly using relative image path. Example can be found in this document. If <b>url</b> attribute presents and not empty, it will ignore <b>html</b> attribute|
+| html | <b>Optional Field</b>, you can insert html template to icon area, this enables you to utilize external animated fonts/css libaries. eg. [fontawesome](http://fontawesome.io/examples/) or [Spinkit](https://github.com/tobiasahlin/SpinKit) etc. 
 
 Then, you can combine with <b>v-if</b>/<b>v-show</b> to show or hide the BlockUI.
 
@@ -69,6 +70,9 @@ Please note the differences of using ":" or not.
 or
 
 <BlockUI :message="msg" :url="url"></BlockUI>
+
+or
+<BlockUI :message="msg" :html="html"></BlockUI>
 ```
 
 ## In your Code
@@ -87,6 +91,7 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
+      html: '<i class="fa fa-cog fa-spin fa-3x fa-fw"></i>',  //this line demostrate how to use fontawesome animation icon 
       url : loadingImage   //It is important to import the loading image then use here
     }
   }
@@ -95,15 +100,34 @@ export default {
 
 ## Styling Customizatoin
 You can override BlockUI sytlings based on your needs.
-Check the class defined for BlockUI using develop tool in your favorite browser.
+Check the class defined for BlockUI using develop tool in your favorite browser for more details.
 
+The layout hierarchy desmostrated in below, I did not use simple class like "label" due to the risk of being populated by other external css.
+```
+.loading-container {
+  .loading-backdrop {
+    //the backdrop falls in here, you can override the opacity etc.
+  }
+  .loading {
+    .loading-icon {
+      //the image or inserted html will be put here
+    }
+    .loading-label {
+      //the label showing on loading screen
+    }
+  }
+}
+
+```
 
 # Demo Screens
 Check below screenshots (More to come):
 
-![alt text](https://raw.githubusercontent.com/realdah/vue-blockui/master/samples/sample1.jpg)
+Below screen is using animated gif/svg
+![Sample used animated gif/svg](https://raw.githubusercontent.com/realdah/vue-blockui/master/samples/sample1.jpg)
 
-
+Below screen is using css animation
+![Sample used css animation](https://raw.githubusercontent.com/realdah/vue-blockui/master/samples/sample2.jpg)
 
 
 # Plugin Development
