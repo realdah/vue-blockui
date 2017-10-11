@@ -127,7 +127,7 @@ Below screen is using animated gif/svg
 ![Sample used animated gif/svg](https://raw.githubusercontent.com/realdah/vue-blockui/master/samples/sample1.jpg)
 
 Below screen is using css animation
-![Sample used css animation](https://raw.githubusercontent.com/realdah/vue-blockui/master/samples/sample2.jpg)
+![Sample used css animation](https://raw.githubusercontent.com/realdah/vue-blockui/master/samples/sample2.png)
 
 
 # Plugin Development
