@@ -58,7 +58,7 @@ I would recommend you to create your VUE project using vue-cli, then it should i
 | ------------- | ------------- |
 | message  | Message to be shown in loading screen  |
 | url  | <b>Optional Field</b>, image including svg/gif/png/jpg etc, you can use any animated/static image supported by img tag.  Please be aware that you'd better import the image resource then use it instead of directly using relative image path. Example can be found in this document. If <b>url</b> attribute presents and not empty, it will ignore <b>html</b> attribute|
-| html | <b>Optional Field</b>, you can insert html template to icon area, this enables you to utilize external animated fonts/css libaries. eg. [fontawesome](http://fontawesome.io/examples/) or [Spinkit](https://github.com/tobiasahlin/SpinKit) etc. 
+| html | <b>Optional Field</b>, you can insert html template to icon area, this enables you to utilize external animated fonts/css libaries. eg. [fontawesome](http://fontawesome.io/examples/) or [Spinkit](https://github.com/tobiasahlin/SpinKit) etc.  <b>Don't forget to import related css & fonts into project by yourself</b>
 
 Then, you can combine with <b>v-if</b>/<b>v-show</b> to show or hide the BlockUI.
 
