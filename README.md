@@ -98,7 +98,7 @@ export default {
 }
 ```
 
-## Styling Customizatoin
+## Styling Customization
 You can override BlockUI sytlings based on your needs.
 Check the class defined for BlockUI using develop tool in your favorite browser for more details.
 
