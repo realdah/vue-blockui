@@ -102,7 +102,7 @@ export default {
 You can override BlockUI sytlings based on your needs.
 Check the class defined for BlockUI using develop tool in your favorite browser for more details.
 
-The layout hierarchy desmostrated in below, I did not use simple class like "label" due to the risk of being populated by other external css.
+The layout hierarchy desmostrated in below, I did not use simple class like "label" due to the risk of being polluted by other external css.
 ```
 .loading-container {
   .loading-backdrop {
