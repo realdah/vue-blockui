@@ -3,10 +3,11 @@
         <div class="loading-backdrop"></div>
         <div class="loading">
             <div class="loading-icon">
-                <img :src="url" v-if="url"/>
+                <img v-if="url" :src="url"/>
                 <div v-if="!url && html" v-html="html"></div>
+                <slot></slot>
             </div>
-            <div class="loading-label">{{message}}</div>
+            <div v-if="message" class="loading-label">{{message}}</div>
         </div>
     </div>
 </template>

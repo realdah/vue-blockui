@@ -1,7 +1,7 @@
 {
   "name": "vue-blockui",
   "description": "BlockUI for vue 2, similiar to jquery blockUI, can be used for loading screen.",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "author": {
     "name": "jeff",
     "email": "realdah@gmail.com"
@@ -45,7 +45,7 @@
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^2.0.1",
     "extract-text-webpack-plugin": "^2.1.2",
-    "node-sass": "^4.0.0",
+    "node-sass": "^4.9.0",
     "sass-loader": "^4.1.0",
     "vue-loader": "^10.0.0",
     "vue-template-compiler": "^2.1.6",

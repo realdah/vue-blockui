@@ -58,22 +58,11 @@ I would recommend you to create your VUE project using vue-cli, then it should i
 | ------------- | ------------- |
 | message  | Message to be shown in loading screen  |
 | url  | <b>Optional Field</b>, image including svg/gif/png/jpg etc, you can use any animated/static image supported by img tag.  Please be aware that you'd better import the image resource then use it instead of directly using relative image path. Example can be found in this document. If <b>url</b> attribute presents and not empty, it will ignore <b>html</b> attribute|
-| html | <b>Optional Field</b>, you can insert html template to icon area, this enables you to utilize external animated fonts/css libaries. eg. [fontawesome](http://fontawesome.io/examples/) or [Spinkit](https://github.com/tobiasahlin/SpinKit) etc.  <b>Don't forget to import related css & fonts into project by yourself</b>
+| html | (Deprecated, suggest to use [slot] option instead), <b>Optional Field</b>, you can insert html template to icon area, this enables you to utilize external animated fonts/css libaries. eg. [fontawesome](http://fontawesome.io/examples/) or [Spinkit](https://github.com/tobiasahlin/SpinKit) etc.  <b>Don't forget to import related css & fonts into project by yourself</b>
+| [slot] | Directly use any html template or other Vue Component, it will replace the icon part, see examples in readme.
 
 Then, you can combine with <b>v-if</b>/<b>v-show</b> to show or hide the BlockUI.
 
-## In your template
-Please note the differences of using ":" or not.
-```
-<BlockUI message="Loading..."></BlockUI>
-
-or
-
-<BlockUI :message="msg" :url="url"></BlockUI>
-
-or
-<BlockUI :message="msg" :html="html"></BlockUI>
-```
 
 ## In your Code
 Please be aware, if you are using webpack and with file-loader to add finger print to your asserts,
@@ -85,6 +74,23 @@ import BlockUI from 'vue-blockui'
 import loadingImage from './assets/logo.png'
 
 Vue.use(BlockUI)
+```
+```
+<BlockUI :message="msg" :url="url"></BlockUI>
+
+export default {
+  name: 'app',
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App',
+      url : loadingImage   //It is important to import the loading image then use here
+    }
+  }
+}
+```
+or
+```
+<BlockUI :message="msg" :html="html"></BlockUI>
 
 export default {
   name: 'app',
@@ -92,7 +98,22 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App',
       html: '<i class="fa fa-cog fa-spin fa-3x fa-fw"></i>',  //this line demostrate how to use fontawesome animation icon 
-      url : loadingImage   //It is important to import the loading image then use here
+    }
+  }
+}
+```
+
+Or using inline html or component **[slot example]**
+```
+<BlockUI :message="msg">
+  <i class="fa fa-cog fa-spin fa-3x fa-fw"></i>
+</BlockUI>
+
+export default {
+  name: 'app',
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App',
     }
   }
 }
@@ -134,18 +155,21 @@ Below screen is using spinkit css animation
 
 Sample config for using spinkit css animation:
 ```
+<BlockUI :message="msg">
+  <div class="sk-wave">
+    <div class="sk-rect sk-rect1"></div>
+    <div class="sk-rect sk-rect2"></div>
+    <div class="sk-rect sk-rect3"></div>
+    <div class="sk-rect sk-rect4"></div>
+    <div class="sk-rect sk-rect5"></div>
+  </div>
+</BlockUI>
+
 export default {
   name: 'HelloWorld',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      html: `<div class="sk-wave">
-        <div class="sk-rect sk-rect1"></div>
-        <div class="sk-rect sk-rect2"></div>
-        <div class="sk-rect sk-rect3"></div>
-        <div class="sk-rect sk-rect4"></div>
-        <div class="sk-rect sk-rect5"></div>
-      </div>`
     }
   }
 }
